@@ -5,7 +5,7 @@ The code for this task is on Github, and the demo is pulling the code directly f
 You can see this in action here: https://dom.az1.qualtrics.com/jfe/form/SV_didJZP14WPlvKPX
 
 The easiest way to get started is to import this qualtrics survey which shows the task
-   https://github.com/ljohnson425/Fun_with_words/blob/master/Qualtrics_Word_Search_Task_-_Demo.qsf
+   https://github.com/ljohnson425/Fun_with_words/blob/master/Qualtrics_Fun_with_words_Task_-_Demo.qsf
 (click "raw" then download the file and then import it into your Qualtrics account)
 
 Details on how to use the task are embedded directly in the templates:
