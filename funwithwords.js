@@ -2,7 +2,7 @@
   'use strict';
 
   // Extend the element method
-  Element.prototype.wordSeach = function(settings) {
+  Element.prototype.funwithwords = function(settings) {
     return new WordSeach(this, settings);
   }
 
@@ -13,7 +13,7 @@
    * @param {Array} settings
    * constructor
    */
-  function WordSeach(wrapEl, settings) {
+  function funwithwords(wrapEl, settings) {
     
     this.wrapEl = wrapEl;
 
@@ -28,21 +28,21 @@
       'directions': ['W', 'N', 'WN', 'EN'],
       'gridSize': 18,
       'words': [
-	     'throne',
-		'palace',
-		'tradition',
-		'family',
-		'descent',
-		'royal',
-		'kingdom',
-		'prince',
-		'law',
-		'earl',
-		'government',
-		'charter',
-		'sovereign',
-		'orb',
-		'commons'
+	     'but',
+		'four',
+		'too',
+		'pretty',
+		'under',
+		'psychology',
+		'brown',
+		'have',
+		'went',
+		'please',
+		'must',
+		'under',
+		'there',
+		'want',
+		'what'
 	  ],
       'debug': false,
 	  'condition' : 0,
