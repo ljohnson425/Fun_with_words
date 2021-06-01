@@ -2,12 +2,12 @@
   'use strict';
 
   // Extend the element method
-  Element.prototype.funwithwords = function(settings) {
-    return new WordSeach(this, settings);
+  Element.prototype.Funwithwords = function(settings) {
+    return new Funwithwords(this, settings);
   }
 
   /**
-   * Word search
+   * Fun With Words
    *
    * @param {Element} wrapWl the games wrap element
    * @param {Array} settings
@@ -24,7 +24,7 @@
 	var mid = gup('mid');
 	
     // Default settings
-    var default_settings = {
+   var default_settings = {
       'directions': ['W', 'N', 'WN', 'EN'],
       'gridSize': 18,
       'words': [
@@ -93,7 +93,6 @@
 	  var currentscore = score();
 	  document.getElementById("score").innerHTML = "Found " + currentscore + " out of " + this.settings.words.length + " words so far.";
     }
-  }
 
   
   /**
@@ -101,7 +100,7 @@
    * @param {Number} Max size
    * @return {Boolean}
    */
-  WordSeach.prototype.parseWords = function(maxSize) {
+  Funwithwords.prototype.parseWords = function(maxSize) {
     var itWorked = true;
 
     for (var i = 0; i < this.settings.words.length; i++) {
@@ -122,7 +121,7 @@
   /**
    * Put the words into the matrix
    */
-  WordSeach.prototype.addWords = function() {
+  Funwithwords.prototype.addWords = function() {
 	  //modified this function to make impossible puzzles when condition = 1
 
 
@@ -174,7 +173,7 @@
    * @param {String} word
    * @param {Number} direction
    */
-  WordSeach.prototype.addWord = function(word, direction) {
+  Funwithwords.prototype.addWord = function(word, direction) {
     var itWorked = true,
       directions = {
         'W': [0, 1], // Horizontal (From left to right)
@@ -233,7 +232,7 @@
   /**
    * Initialize the application
    */
-  WordSeach.prototype.initialize = function() {
+  Funwithwords.prototype.initialize = function() {
     /**
      * Letter matrix
      *
@@ -283,7 +282,7 @@
     }
   }
 
-  WordSeach.prototype.testmatrix = function(size) {
+  Funwithwords.prototype.testmatrix = function(size) {
     var test_matrix = [
 	['.','.','.','.','.','.','.','.','.'],
 	['.','B','R','O','W','S','E','R','.'],
@@ -303,7 +302,7 @@
 	   return 1;
   }
   
-  WordSeach.prototype.bobmatrix = function(size) {
+  Funwithwords.prototype.bobmatrix = function(size) {
 	
     //for (var row = 0; row < size; row++) {
 	//   if (!this.matrix[row]) {
@@ -437,7 +436,7 @@
   /**
    * Draw the matrix
    */
-  WordSeach.prototype.drawmatrix = function() {
+  Funwithwords.prototype.drawmatrix = function() {
     var rowcount = this.settings.gridSize;
 	var columncount = this.settings.gridSize;
 	if (this.settings.test) { 
@@ -486,7 +485,7 @@
   /**
    * Fill up the remaining items
    */
-  WordSeach.prototype.fillUpFools = function() {
+  Funwithwords.prototype.fillUpFools = function() {
     var rsize = this.settings.gridSize;
     var csize = this.settings.gridSize;
     if (this.settings.condition > 2) {
@@ -511,7 +510,7 @@
    * @param colTo
    * @return {Array}
    */
-  WordSeach.prototype.getItems = function(rowFrom, colFrom, rowTo, colTo) {
+  Funwithwords.prototype.getItems = function(rowFrom, colFrom, rowTo, colTo) {
     var items = [];
 
     if ( rowFrom === rowTo || colFrom === colTo || Math.abs(rowTo - rowFrom) == Math.abs(colTo - colFrom) ) {
@@ -537,14 +536,14 @@
    * @param {Number} col
    * @return {*}
    */
-  WordSeach.prototype.getItem = function(row, col) {
+  Funwithwords.prototype.getItem = function(row, col) {
     return (this.matrix[row] ? this.matrix[row][col] : undefined);
   }
 
   /**
    * Clear the exist highlights
    */
-  WordSeach.prototype.clearHighlight = function() {
+  Funwithwords.prototype.clearHighlight = function() {
     var selectedEls = document.querySelectorAll('.ws-selected');
     for (var i = 0; i < selectedEls.length; i++) {
       selectedEls[i].classList.remove('ws-selected');
@@ -555,7 +554,7 @@
    * Lookup if the wordlist contains the selected
    * @param {Array} selected
    */
-  WordSeach.prototype.lookup = function(selected) {
+  funwithwords.prototype.lookup = function(selected) {
   
   
     var words = [''];
@@ -592,10 +591,10 @@
   }
 
   /**
-   * Mouse event - Mouse down
+   * Mouse event - Mouse down
    * @param {Object} item
    */
-  WordSeach.prototype.onMousedown = function(item) {
+  Funwithwords.prototype.onMousedown = function(item) {
     var _this = this;
     return function() {
       _this.selectFrom = item;
@@ -606,7 +605,7 @@
    * Mouse event - Mouse move
    * @param {Object}
    */
-  WordSeach.prototype.onMouseover = function(item) {
+  Funwithwords.prototype.onMouseover = function(item) {
     var _this = this;
     return function() {
       if (_this.selectFrom) {
@@ -629,7 +628,7 @@
   /**
    * Mouse event - Mouse up
    */
-  WordSeach.prototype.onMouseup = function() {
+  Funwithwords.prototype.onMouseup = function() {
     var _this = this;
     return function() {
       _this.selectFrom = null;
@@ -640,3 +639,4 @@
   }
 
 })();
+}
